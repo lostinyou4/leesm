@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>http://www.blueb.co.kr</title>
+<style type="text/css">
+body {margin:0;padding:0}
+.header {width: 100%;} /*콘테이너 가로 영역지정*/
+ul#topnav {
+	/*margin:100px 0 0 0; padding: 0;*/
+	
+    float: left;
+	display:inline;
+
+	width: 100%; /*콘테이너 사이즈와 같은 값으로*/
+	list-style: none;
+	position: relative;
+	font-size: 12px;
+	font-family:돋움;
+	font-size:12px;
+	letter-spacing:-1px;
+	background: url(barbg.gif) repeat-x;
+	border:5px solid green;
+	
+}
+ul#topnav li {
+	float: left;
+	margin: 0; padding:0;
+	height:35px;
+	border:1px solid yellow;
+}
+ul#topnav li a {
+	padding: 11px 15px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+}
+ul#topnav li:hover { background: #1376c9 url(barbg_hover.gif) repeat-x; }
+ul#topnav li span {
+	float: left;
+	padding: 11px 0;
+	position: absolute;
+	left: 0; top:35px;
+	display: none;
+	width: 100%; /*콘테이너 사이즈와 같은 값으로*/
+	background: url(subbg.gif) top;
+	color: #fff;
+}
+ul#topnav li:hover span { display: block; }
+ul#topnav li span a {display: inline;font-size:11px; }
+ul#topnav li span a:hover {text-decoration: none;background:#5c150e} /*서브메뉴 마우스 오버 칼라*/
+.bar {color:#a9736d}
+</style>
+
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+<div class="header">	
+
+    <ul id="topnav" style="margin:0 auto;border:5px solid green;">
+ 
+        <li><a href="#">블루비</a></li>
+        <li>
+            <a href="#">자바스크립트</a>
+            <span>
+                <a href="#">메뉴/이미지/갤러리</a> <em class="bar">|</em>
+                <a href="#">폼/스크롤</a> <em class="bar">|</em>
+                <a href="#">기타등등</a>
+            </span>
+        </li>
+        <li>
+            <a href="#">디자인</a>
+            <span>
+                <a href="#">템플릿</a> <em class="bar">|</em>
+                <a href="#">아이콘</a> <em class="bar">|</em>
+                <a href="#">배너디자인</a>
+            </span>
+        </li>
+        <li>
+            <a href="#">커뮤니티</a>
+            <span>
+                <a href="#">자유게시판</a> <em class="bar">|</em>
+                <a href="#">큐앤에이</a> <em class="bar">|</em>
+                <a href="#">팁앤테크</a> <em class="bar">|</em>
+                <a href="#">유머게시판</a> <em class="bar">|</em>
+                <a href="#">갤러리</a>
+            </span>
+        </li>
+        <li><a href="#">그냥 메인 메뉴 1</a></li>
+        <li><a href="#">그냥 메인 메뉴 2</a>
+            <span>
+                <a href="#">서브메뉴1</a> <em class="bar">|</em>
+                <a href="#">서브메뉴2</a> <em class="bar">|</em>
+                <a href="#">서브메뉴3</a> <em class="bar">|</em>
+                <a href="#">서브메뉴4</a> <em class="bar">|</em>
+            </span>
+		</li>
+    </ul>
+	
+
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+$("ul#topnav li").hover(function() { //Hover over event on list item
+	$(this).css({ 'background' : '#1376c9 url(barbg_hover.gif) repeat-x'}); //Add background color + image on hovered list item
+	$(this).find("span").show(); //Show the subnav
+} , function() { //on hover out...
+	$(this).css({ 'background' : 'none'}); //Ditch the background
+	$(this).find("span").hide(); //Hide the subnav
+});
+	
+});
+</script>
+
+</body>
+</html>
