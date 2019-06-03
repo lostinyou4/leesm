@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DURACELL</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="./js/typed.js-master/lib/typed.js" type="text/javascript"></script>
+ <script src="./js/typed.js-master/assets/demos.js"></script><!--
+ <script src="./js/prefixfree.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="./css/import.css">
+<!--
+<link rel="stylesheet" href="./js/swiper-3.4.2/dist/css/swiper.css">
+<link rel="stylesheet" href="./js/kissui.scrollanim-master/kissui.scrollanim-master/example/css/kissui.css">-->
+<link rel="stylesheet" href="./js/kissui.scrollanim-master/example/css/custom.css">
+<link rel="stylesheet" href="./js/kissui.scrollanim-master/build/scrollanim.min.css">
+<!--[if IE]>
+<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif]-->
+<!--내비게이션-->
+<!--<link rel="stylesheet" type="text/css" href="./js/CreativeLinkEffects/css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="./js/CreativeLinkEffects/css/demo.css" />
+<link rel="stylesheet" type="text/css" href="./js/CreativeLinkEffects/css/component.css" />
+<script src="./js/CreativeLinkEffects/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="./js/bluebnav/jquery-1.4.2.min.js"></script>-->
+<script type="text/javascript" src="./js/Scrollify-master/jquery.scrollify.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script>
+        $(function() {
+          $.scrollify({
+            section : ".header",
+			section : "#visual",
+			section : "#content1",
+			section : "#content2",
+			section : "#content3",
+			section : "#footersc",
+          });
+        });
+</script>
+
+<!--햄버거-->
+<!--<link rel="stylesheet" href="./js/responsive-sidebar-navigation/css/reset.css">--> <!-- CSS reset -->
+<link rel="stylesheet" href="./js/responsive-sidebar-navigation/css/style.css"> <!-- Resource style -->
+<script src="./js/responsive-sidebar-navigation/js/modernizr.js"></script> <!-- Modernizr -->
+	  
+</head>
+<body>
+<main>
+<header class="header">
+<div class="inner">
+	<h1 id="pclogo">
+		<a href="./index.html"><img src="./images/common/logo.png" alt="logo" /></a>
+	</h1>
+	<div id="find">
+	<form>
+			<input type="text" value="" placeholder="검색" name="search" id="search"><input type="image" id="magnifier" src="./images/common/mag.png">
+	</form>
+	<div id="menu">
+		<a href="#"><img src="./images/common/menu.png"></a>
+	</div>
+	</div><!--//find-->
+</div>
+<div class="cd-main-header">
+	<a href="./index.html" class="cd-logo"><img src="./images/common/logo.png" alt="Logo"></a>
+		
+	<div class="cd-search is-hidden">
+	<form action="#0">
+			<input type="search" placeholder="Search...">
+	</form>
+	</div>
+
+		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+</div>
+<!--//햄버거(위)-->
+
+<nav>
+<ul>
+	<li class="cl-effect-1"><a href="./product.html">제품</a>
+
+	<span>
+		<a href="javascript:void(0);">알카라인 건전지</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">코인/버튼 건전지</a>
+	</span>
+	</li>
+	<li class="cl-effect-1"><a href="./life.html">생활속 듀라셀</a>
+	</li>
+	<li class="cl-effect-1"><a href="./company.html">기술정보</a>
+	<span>
+		<a href="javascript:void(0);">고밀도 코어</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">건전지 사용 및 취급</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">건전지 제작 방법</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">리튬 코인 전지 안전</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">듀라셀 건전지 수명</a>
+	</span>
+	</li>
+	<li class="cl-effect-1"><a href="./company.html">회사소개</a>
+	<span>
+		<a href="javascript:void(0);">듀라셀소개</a> <em class="bar">|</em>
+
+		<a href="javascript:void(0);">채용</a>
+	</span>
+	</li>
+	<li class="cl-effect-1"><a href="./product.html">도움말</a>
+	<span>
+		<a href="javascript:void(0);">연락처</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">사이트맵</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">이용 약관</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">개인정보 취급방침</a> <em class="bar">|</em>
+		<a href="javascript:void(0);">쿠키 설정 정책</a> 
+	</span>
+	</li>
+	</ul>
+</nav>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	
+$("ul li").hover(function() { //Hover over event on list item
+	$(this).css({ 'background' : 'none'}); //Add background color + image on hovered list item
+	$(this).find("span").show(); //Show the subnav
+} , function() { //on hover out...
+	$(this).css({ 'background' : 'none'}); //Ditch the background
+	$(this).find("span").hide(); //Hide the subnav
+});
+	
+});
+</script>
+<script>
+$.scrollify({
+section : ".header",
+sectionName : "header",
+interstitialSection : "",
+easing: "easeOutExpo",
+scrollSpeed: 1100,
+offset : 0,
+scrollbars: true,
+standardScrollElements: "",
+setHeights: true,
+overflowScroll: true,
+updateHash: true,
+touchScroll:true,
+before:function() {},
+after:function() {},
+afterResize:function() {},
+afterRender:function() {}
+});
+</script>
+</header>
+
+<!--햄버거-->
+<div class="cd-main-content">
+<nav class="cd-side-nav">
+<ul>
+	<li class="cd-label">메뉴</li>
+	<li class="has-children overview">
+		<a href="#0">제품</a>
+		<ul>
+			<li><a href="./product.html">알카라인 건전지</a></li>
+			<li><a href="./product.html">코인/버튼 건전지</a></li>
+		</ul>
+	</li>
+	<li class="notifications">
+		<a href="./life.html">생활속 듀라셀</a>
+	</li>
+
+	<li class="has-children comments">
+		<a href="#0">기술정보</a>
+		<ul>
+			<li><a href="./company.html">고밀도 코어</a></li>
+			<li><a href="./company.html">건전지 사용 및 취급</a></li>
+			<li><a href="./company.html">건전지 제작 방법</a></li>
+			<li><a href="./company.html">리튬 코인 전지 안전</a></li>
+			<li><a href="./company.html">듀라셀 건전지 수명</a></li>
+		</ul>
+	</li>
+	
+	<li class="has-children bookmarks">
+		<a href="#0">회사정보</a>
+		<ul>
+			<li><a href="./company.html">듀라셀소개</a></li>
+			<li><a href="./company.html">채용</a></li>
+		</ul>
+	</li>
+	
+	<li class="has-children images">
+		<a href="#0">FAQ</a>	
+		<ul>
+			<li><a href="./life.html">연락처</a></li>
+			<li><a href="./life.html">사이트맵</a></li>
+			<li><a href="./life.html">이용 약관</a></li>
+			<li><a href="./life.html">개인정보 취급방침</a></li>
+			<li><a href="./life.html">쿠키 설정 정책</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#0"></a>	
+	</li>
+</ul>
+</nav>
+</div> <!-- .cd-main-content -->
+<script src="./js/responsive-sidebar-navigation/js/jquery-2.1.4.js"></script>
+<script src="./js/responsive-sidebar-navigation/js/jquery.menu-aim.js"></script>
+<script src="./js/responsive-sidebar-navigation/js/main.js"></script> <!-- Resource jQuery -->
+<!--//햄버거-->
+
+<section id="visual"> 
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="typing">
+		<span id="typed2" style="white-space:pre;"></span>
+
+		<h3>듀라셀은 전 연령대의 탐험가, 배우는자,<br>모험가에게 힘을 실어 줍니다.</h3>
+		</div>
+		<div class="swiper-slide bg01"></div>
+		<div class="swiper-slide bg02"></div>			
+	</div>
+		<div class="swiper-pagination">
+		</div>
+</div>
+		 
+	 <script src="./js/swiper-3.4.2/dist/js/swiper.min.js"></script>
+		 
+	 <script>
+		var swiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		effect:'fade',
+		autoplay: 7000,
+		autoplayDisableOnInteraction: false,
+		speed:2000
+});
+</script>
+
+<script>
+  $.scrollify({
+    section : "#visual",
+    sectionName : "visual",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1100,
+    offset : 0,
+    scrollbars: true,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
+    before:function() {},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {}
+  });
+ </script>
+</section><!--//visual-->
+
+<section id="content1">
+<div class="inner">
+	<h3> 오래가는 파워를 보장합니다</h3>
+	<p>듀라셀의 듀라락과 고밀도 코어 기술은 오래가는 파워를 가능하게 합니다.</p>
+	<div>
+		<!--<img src="./images/main/content1_vi.jpg" />-->
+		<iframe width="1200" height="675" src="https://www.youtube.com/embed/FiKsGmO4DGA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen poster="./images/main/content1_vi.jpg"></iframe>
+	</div>
+	<div id="moviebtn">
+		<a href="https://www.youtube.com/channel/UCjX2BMndKdICNi4ou0vTidw"><!--<img src="./images/main/content1_btn1.png" />-->더 많은 영상 보러가기</a>
+		<a href="./life.html"><!--<img src="./images/main/content1_btn2.png" />-->원하는 제품 찾기</a>
+	</div>
+</div>
+</section><!--//content1-->
+
+<section id="sct1">
+<section id="content2">
+<div class="inner">
+	<h3>듀라셀의 추천 제품</h3>
+	<!-- Add Arrows -->
+	<div class="swiper-button">
+    <div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+	</div>
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+    <div class="swiper-slide slide01">
+	<dl>
+		<dd><img src="./images/main/aa.jpg" /></dd>
+		<dt>울트라 알카라인<br>AA 건전지</dt>
+		<dd><a href="./product.html">더 보기</a></dd>
+	</dl>
+	</div>
+			
+    <div class="swiper-slide slide02">
+	<dl>
+		<dd><img src="./images/main/aa_deluxe.jpg" /></dd>
+		<dt>디럭스 알카라인<br>AA 건전지</dt>
+		<dd><a href="./product.html">더 보기</a></dd>
+	</dl>
+	</div>
+
+	<div class="swiper-slide slide03">
+	<dl>
+		<dd><img src="./images/main/aaa_ultra.jpg" /></dd>
+		<dt>울트라 알카라인<br>AAA 건전지</dt>
+		<dd><a href="./product.html">더 보기</a></dd>
+	</dl>
+	</div>
+	
+	<div class="swiper-slide slide04">
+	<dl>
+		<dd><img src="./images/main/9v.jpg" /></dd>
+		<dt>디럭스 알카라인<br>9V 건전지</dt>
+		<dd><a href="./product.html">더 보기</a></dd>
+	</dl>
+	</div>
+	
+	<div class="swiper-slide slide05">
+	<dl>
+		<dd><img src="./images/main/c.jpg" /></dd>
+		<dt>디럭스 알카라인<br>C 건전지</dt>
+		<dd><a href="./product.html">더 보기</a></dd>
+	</dl>
+	</div>
+	
+	<div class="swiper-slide slide06">
+	<dl>
+		<dd><img src="./images/main/aaa.jpg" /></dd>
+		<dt>디럭스 알카라인<br>AAA 건전지</dt>
+		<dd><a href="./product.html">더 보기</a></dd>
+	</dl>
+	</div>
+	
+	</div><!--//swiper-wrapper-->
+	<div class="swiper-pagination">
+	</div>
+	</div><!--//swiper-container-->
+</div><!--inner-->
+
+<script>
+		var swiper = new Swiper('#content2 .inner .swiper-container', {
+        pagination: '#content2 .inner .swiper-pagination',
+        paginationClickable: true,
+		slidesPerView: 3,
+        autoplayDisableOnInteraction: false,
+		loop: true,
+		spaceBetween: 30,
+		nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        breakpoints: {
+            1279: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            599: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            }
+        }
+
+    });
+</script>
+
+</section><!--//content2-->
+<p id="rabbit1"><img src="./images/main/rabbit1.png" alt="rabbit"/></p>
+
+<section id="content3">
+<div class="inner">
+	<div class="box1">
+	<dl>
+		<dt>듀라셀 스토리</dt>
+		<dd data-kui-anim="slideInDown"> 듀라셀은 고성능 알카라인 건전지, 특수 건전지 및 충전지를 생산하는 세계적인 제조회사입니다. 1940년대 초반 창업 이래로, 건전지를 상징하는 브랜드로 성장했으며 오래가는 소형 건전지로 신뢰를 받고 있습니다. 그리고 이 모든 역사의 중심에는 듀라버니가 있었습니다.</dd>
+		<dd><a href="./company.html">READ MORE <img src="./images/main/content3_btn.png" /></a></dd>
+	</dl>
+	</div>
+	
+	<div class="box2">
+	<dl>
+		<dd class="zoomin"></dd>
+		<dd><a href="#">건전지 보관 방법에<br> 대해 궁금하세요?</a></dd>
+	</dl>
+	<dl>
+		<dd class="zoomin"></dd>
+		<dd><a href="#">잘못된 건전지 사용,<br> 불안하셨나요?</a></dd>
+	</dl>
+	<dl>
+		<dd class="zoomin"></dd>
+		<dd><a href="#">건전지 지식에<br> 대해 더 알아보세요!</a></dd>
+	</dl>
+	</div>
+</div><!--//inner-->
+
+<script src='./js/kissui.scrollanim-master/build/scrollanim.js'></script>
+
+</section><!--//content3-->
+</section><!--//sct1-->
+
+<section id="content4">
+<div class="inner">
+	<h3>듀라셀과 함께하는 즐거움</h3>
+	<div class="box">
+	<div class="grid left side">
+	<figure class="effect-bubba">
+		<img src="./images/main/content3_bg1.jpg" alt="bg1"/>
+		<figcaption>
+			<h2></h2>
+			<p>건전지 사용 및<br>취급, 폐기</p>
+			<a href="#">View more</a>
+		</figcaption>
+	</figure>
+	<figure class="effect-bubba">
+		<img src="./images/main/content3_bg2.jpg" alt="bg2"/>
+		<figcaption>
+			<h2></h2>
+			<p>오래가는<br>듀라셀 건전지</p>
+			<a href="#">View more</a>
+		</figcaption>
+	</figure>
+	</div>
+
+	<div class="grid center">
+	<figure class="effect-bubba">
+		<img src="./images/main/content3_bg3.jpg" alt="bg3"/>
+		<figcaption>
+			<h2></h2>
+			<p>고밀도 코어-<br>혁신적인 내부 기술</p>
+			<a href="#">View more</a>
+		</figcaption>
+	</figure>
+	</div>
+
+	<div class="grid right side">
+	<figure class="effect-bubba">
+		<img src="./images/main/content3_bg4.jpg" alt="bg4"/>
+		<figcaption>
+			<h2></h2>
+			<p>건전지 삼킴<br>사고 예방법</p>
+			<a href="#">View more</a>
+		</figcaption>
+	</figure>
+	<figure class="effect-bubba">
+		<img src="./images/main/content3_bg5.jpg" alt="bg5"/>
+		<figcaption>
+			<h2></h2>
+			<p>건전지의 작동<br>원리와 제작 방법</p>
+			<a href="#">View more</a>
+		</figcaption>
+	</figure>
+	</div>
+	</div><!--//box-->
+</div><!--//inner-->
+</section>
+
+<section id="footersc">
+<div class="inner">
+	<h4>
+		<a href="./index.html"><img src="./images/common/logo.png" alt="logo" /></a>
+	</h4>
+	<div id="sitemap">
+	<dl>
+	<dt><a href="./product.html">제품</a></dt>
+	<dd><a href="javascript:void(0);">알카라인 건전지</a></dd>
+	<dd><a href="javascript:void(0);">코인/버튼 건전지</a></dd>
+	</dl>
+	
+	<dl>
+	<dt><a href="./life.html">기술정보</a></dt>
+	<dd><a href="javascript:void(0);">고밀도 코어</a></dd>
+	<dd><a href="javascript:void(0);">건전지 사용 및 취급</a></dd>
+	<dd><a href="javascript:void(0);">건전지 제작 방법</a></dd>
+	<dd><a href="javascript:void(0);">리튬 코인 전지 안전</a></dd>
+	<dd><a href="javascript:void(0);">듀라셀 건전지 수명</a></dd>
+	</dl>
+	
+	<dl>
+	<dt><a href="./company.html">회사정보</a></dt>
+	<dd><a href="javascript:void(0);">듀라셀소개</a></dd>
+	<dd><a href="javascript:void(0);">채용</a></dd>
+	</dl>
+	
+	<dl>
+	<dt><a href="./company.html">FAQ</a></dt>
+	<dd><a href="javascript:void(0);">연락처</a></dd>
+	<dd><a href="javascript:void(0);">사이트맵</a></dd>
+	<dd><a href="javascript:void(0);">이용 약관</a></dd>
+	<dd><a href="javascript:void(0);">개인정보 취급방침</a></dd>
+	<dd><a href="javascript:void(0);">쿠키 설정 정책</a></dd>
+	</dl>
+	</div>
+</div><!--inner-->
+</section>
+
+<footer>
+<div class="inner">
+	<h4 class="logo">
+		<a href="./index.html"><img src="./images/common/logo.png" alt="logo" /></a>
+	</h4>
+	<p id="copyright">저작권 ⓒ 2017 Duracell Inc. 모든 권리 보유.</p>
+	
+	<p id="nationbtn">
+	<a href="javascript:void(0);"><img src="./images/common/nationbtn.png" alt="down"/></a>
+	</p>
+	
+	<ul class="rightside">
+	<li>국가 선택</li>
+	<li><a href="javascript:void(0);">KR</a></li>
+	</ul>
+	
+</div><!--inner-->
+</footer>
+</main>
+
+<script type="text/javascript">
+//typing
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11539016-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+  //hover
+  // For Demo purposes only (show hover effect on mobile devices)
+			[].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {
+				el.addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+			} );
+</script>
+</body>
+</html>
