@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+</head>
+
+<body>
+  <xmp>
+    - css 태그 뒤에 [class^="aaa"]{}
+    : aaa로 시작되는 클래스 지정
+
+    - 사용자 속성 만들기 : data-bbb
+
+    * 활용(css)
+    a[class^="aaa"]:before{
+      content:attr(data-bbb);
+    }
+    - aaa로 시작하는 클래스의 콘텐츠를
+      data-bbb의 값으로 바꿔준다.
+      서로 다른 값을 가질 수 있다.
+
+
+    - <script src=""></script>
+      <link href="">
+
+    - background:url() no repeat center 0;
+  </xmp>
+</body>
+</html>
