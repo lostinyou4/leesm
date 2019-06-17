@@ -1,0 +1,106 @@
+header{
+	width:1920px;
+}
+.inner{
+	width:1100px;
+	margin:0 auto;
+	height:auto;
+	overflow:hidden;
+	position:relative;
+}
+header h1{
+	float:left;
+	padding-top:73px;
+	width:175px;
+}
+header h1 a{
+	display:inline-block;
+}
+header h1 a img{
+	width:100%;
+}
+header nav{
+	float:left;
+	padding-left:69px;
+	width:925px;
+	padding-top:89px;
+	padding-bottom:23px;
+}
+header nav li{
+	display:inline-block;
+	padding-left:41px;
+}
+
+header nav li a{
+	font-size:20px;
+	font-family: 'KoPub Dotum';
+	font-weight: 400;
+	color:#505050;
+}
+
+#menu1{
+	position:absolute;
+	right:0;
+	top:0;
+}
+#menu1 ul li{
+	display:inline-block;
+	padding-left:13px;
+	padding-right:4px;
+	background:url(../img/bg_menu.png) no-repeat 0 7px;
+}
+#menu1 ul li:first-child{
+	background:none;
+}
+
+#menu1 ul li a{
+	font-size:15px;
+	font-family: 'KoPub Dotum';
+	font-weight: 300;
+	color:#414141;
+}
+
+#logo_ft{
+	width:140px;
+}
+#logo_ft img{
+	width:100%;
+}
+
+footer{
+	background-color:#ececec;
+	padding:45px 0;
+
+}
+#logo_ft{
+	padding-right:23px;
+	float:left;
+}
+.dl{
+	float:left;
+}
+.dl dd:first-child{
+	font-size:14px;
+	font-family: 'KoPub Dotum';
+	font-weight: 600;
+	padding-bottom:5px;
+}
+.dl dd:last-child{
+	font-size:12px;
+	font-family: 'KoPub Dotum';
+	font-weight: 300;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
