@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <xmp>
+    onload 쓰기
+
+    - html 에서 쓸 때
+    <iframe onload="myFunction()" src=""></iframe>
+    <p id="demo"></p>
+    <script>
+      function myFunction(){
+        document.getElementById("demo").innerHTML = "IFrame"
+      }
+    </script>
+
+
+    - 자바스크립트에서 쓸 때
+    <iframe id="myFrame" src=""></iframe>
+    <p id="demo"></p>
+
+    <script>
+      document.getElementById("myFrame").addEventListener("load",myFunction);
+    </script>
+  </xmp>
+</body>
+</html>

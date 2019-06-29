@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <canvas width="1600" height="800" id="area"></canvas>
+    <canvas width="3000" height="1500" id="area2"></canvas>
+
+    <script type="text/javascript">
+      var canvas = document.getElementById("area");
+      if(canvas.getContext){
+        var draw=canvas.getContext("2d");
+
+        /*배경*/
+        draw.beginPath();
+        draw.rect(0,0,800,600);
+        draw.fillStyle = "Gainsboro";
+        draw.fill();
+
+        /*몸*/
+        draw.beginPath();
+        draw.moveTo(270,300);
+        draw.bezierCurveTo(150,220,300,50,400,180);
+        draw.bezierCurveTo(450,250,470,290,500,300);
+        draw.bezierCurveTo(470,310,450,350,400,420);
+        draw.bezierCurveTo(300,550,150,380,270,300);
+
+        var grd = draw.createRadialGradient(350,170,30,320,300,250);
+        grd.addColorStop(0, "LightPink");
+        grd.addColorStop(0.5,'LightCoral');
+        grd.addColorStop(1,"Sienna");
+        draw.fillStyle=grd;
+
+        draw.lineWidth=3;
+        draw.lineCap="round";
+        draw.strokeStyle="Sienna";
+        draw.fill();
+        draw.stroke();
+
+        /*볼*/
+        draw.beginPath();
+        draw.arc(370,320,20,(0*Math.PI),(2.0*Math.PI),true);
+        draw.lineWidth=2;
+        draw.fillStyle="LightPink";
+        draw.stroke();
+        draw.fill();
+
+        /*검은자*/
+        draw.beginPath();
+        draw.arc(420,290,15,(0*Math.PI),(2.0*Math.PI),true);
+        draw.fillStyle="Black";
+        draw.fill();
+
+        /*눈명암*/
+        draw.beginPath();
+        draw.arc(420,295,10,(0*Math.PI),(2.0*Math.PI),true);
+        draw.fillStyle="MidnightBlue";
+        draw.fill();
+
+        /*흰자*/
+        draw.beginPath();
+        draw.arc(420,285,5,(0*Math.PI),(2.0*Math.PI),true);
+        draw.fillStyle="White";
+        draw.fill();
+        draw.drawImage(area,300,200,150,150,800,0,200,200);
+
+
+        /*var imgObj = new Image();
+        imgObj.onload = function(){
+          draw.drawImage(imgObj,800,0,180,200);
+          /*draw.drawImage(imgObj,400,300,100,100,0,0,200,200);
+        }
+        imgObj.src="./luv.png";*/
+      }
+      else{
+        alert("이 브라우저는 canvas를 지원하지 않습니다");
+      }
+
+      function getMousePos(canvas, evt){
+        var rect = canvas.getBoundingClientRect();
+        return{
+          x:evt.clientX - rect.left,
+          y:evt.clientY - rect.top
+        };
+      }
+
+      point.addEventListener('mousedown', function(evt){
+        var mousePos = getMousePos(point, evt);
+        point.drawImage(area,220,120,300,350,mousePos.x,mousePos.y,300,350);
+      }, false);
+
+      var canvas2 = document.getElementById("area2");
+      if(canvas2.getContext){
+        var point=canvas2.getContext("2d");
+        /*var imgObj=new Image();
+        imgObj.onload = function(){
+          point.drawImage(draw,0,0,400,200,400,200,200,100);
+        }*/
+        point.beginPath();
+        point.rect(0,0,3000,1500);
+        point.strokeStyle = "Black";
+        point.stroke();
+      }
+      else{
+        alert("X");
+      }
+    </script>
+
+  </body>
+</html>
