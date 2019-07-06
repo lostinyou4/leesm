@@ -63,44 +63,33 @@
         draw.arc(420,285,5,(0*Math.PI),(2.0*Math.PI),true);
         draw.fillStyle="White";
         draw.fill();
+
         draw.drawImage(area,300,200,150,150,800,0,200,200);
 
+        function getMousePos(canvas, evt) { var rect = canvas.getBoundingClientRect(); return { x: evt.clientX - rect.left, y: evt.clientY - rect.top }; }
 
-        /*var imgObj = new Image();
-        imgObj.onload = function(){
-          draw.drawImage(imgObj,800,0,180,200);
-          /*draw.drawImage(imgObj,400,300,100,100,0,0,200,200);
-        }
-        imgObj.src="./luv.png";*/
+       canvas.addEventListener('mousemove', function(evt) { var mousePos = getMousePos(canvas, evt);
+      draw.drawImage(area,mousePos.x,mousePos.y,200,200,800,200,200,200);
+       }, false);
+
       }
       else{
         alert("이 브라우저는 canvas를 지원하지 않습니다");
       }
 
-      function getMousePos(canvas, evt){
-        var rect = canvas.getBoundingClientRect();
-        return{
-          x:evt.clientX - rect.left,
-          y:evt.clientY - rect.top
-        };
-      }
-
-      point.addEventListener('mousedown', function(evt){
-        var mousePos = getMousePos(point, evt);
-        point.drawImage(area,220,120,300,350,mousePos.x,mousePos.y,300,350);
-      }, false);
-
       var canvas2 = document.getElementById("area2");
       if(canvas2.getContext){
+
         var point=canvas2.getContext("2d");
-        /*var imgObj=new Image();
+        var imgObj=new Image();
         imgObj.onload = function(){
           point.drawImage(draw,0,0,400,200,400,200,200,100);
-        }*/
+        }
         point.beginPath();
         point.rect(0,0,3000,1500);
         point.strokeStyle = "Black";
         point.stroke();
+        
       }
       else{
         alert("X");
