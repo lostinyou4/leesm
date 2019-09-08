@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DressShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="text-center my-4">
+        <h4 class>Cart</h4>
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Size</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--
+			<tr>
+				<th scope="row">1</th>
+				<td>Mark</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+			</tr>
+-->
+        </tbody>
+    </table>
+    <div class="cart">힘들어</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+        function SampleData(id, name, price, quantity, size) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+            this.size = size;
+            localStorage.setItem('product' + this.id, JSON.stringify(this));
+        }
+
+        var data = new SampleData(1, 'Blossom', 199, 2, 'Small');
+        var data2 = new SampleData(2, 'Blue Shirt', 99, 1, 'Large');
+        var data3 = new SampleData(3, 'Black Dress', 159, 1, 'Medium');
+        var data4 = new SampleData(4, 'Red Dress', 59, 1, 'Medium');
+        var data5 = new SampleData(5, 'Green Dress', 129, 2, 'Medium');
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+
+
+
+    <br><br>복습1. localStorage 안에 지금 product1~5의 상품데이터가 저장되어있습니다. 상품명, 수량, 가격, 사이즈 데이터를 꺼내서 tbody 태그안에 5개의 상품데이터를 보여주는 tr들을 만들어보세요.
+
+    <script>
+        for (let i = 0; i < localStorage.length; i++) {
+            var 제이슨 = localStorage.getItem('product' + (i + 1));
+            var 오브젝트 = JSON.parse(제이슨);
+
+            var 템플릿 = `
+		  <tr>
+				<th>1</th>
+				<td>${ 오브젝트.name }</td>
+				<td>
+                    <button class="btn minus">-</button>
+                        <span class="qtt">${ 오브젝트.quantity }</span>
+                    <button class="btn plus">+</button></td>
+				<td>${ 오브젝트.size }</td>
+                <td class="prc">${ 오브젝트.price }</td>
+			</tr>
+            `;
+
+            $('tbody').append(템플릿);
+        }
+
+        
+    </script>
+
+
+
+
+
+    <br><br>복습2. ajax 요청을 이용해 상품더보기 기능을 만들어봅니다. (week4-index 파일에 작성)
+    <br> - 더보기 버튼을 누르면 more.json이라는 경로에 있는 데이터를 가져온 후, 상품진열용 카드 레이아웃을 만들어 index.html하단에 보여주어야합니다.
+
+    index.html에 작성
+
+
+
+    <br><br>복습3. 스크롤바를 100px 이상 내리면 폰트사이즈가 서서히 작아지는 애니메이션을 개발해보도록 합니다. 그리고 배경도 투명해졌다가 스크롤 내리면 단색으로 바뀌는 기능도 개발해봅시다. (week4-index 파일에 작성)
+    <br>힌트 : 배경 투명하게 바꾸는 내 class명이 안먹히면 nav태그에 이미 붙어있는 클래스를 몇개 떼어내봅시다.
+
+    index.html에 작성
+
+
+
+    <br><br>복습4. 수량을 1씩 더하고 뺄 수 있는 +, - 버튼을 테이블의 행마다 추가해봅시다. +버튼을 누르면 1이 더해져야하고, -버튼을 누르면 1이 감해져야합니다. 다만 마이너스 버튼의 경우 0 미만으로 감해지면 안되겠죠?
+
+    <script>
+        $('.plus').on('click', function() {
+            var 내옆숫자 = $(this).siblings('span').text();
+            var 더한숫자 = parseInt(내옆숫자) + 1;
+
+            $(this).siblings('span').text(더한숫자);
+            valEvent();
+        });
+
+        $('.minus').on('click', function() {
+            var 내옆숫자 = $(this).siblings('span').text();
+            if (parseInt(내옆숫자) > 0) {
+                var 더한숫자 = parseInt(내옆숫자) - 1;
+
+                $(this).siblings('span').text(더한숫자);
+            valEvent();    
+            }
+        });
+    </script>
+
+
+
+
+
+    <br><br>숙제1. 현재 페이지에 있는 표 하단에 총 결제금액을 계산해서 표시해주는 기능을 만들어봅시다.
+    <br> - 그리고 아까 만든 +/- 버튼으로 수량을 변경할 때도 총 금액이 그때그때 변동되어야합니다.
+
+    <script>
+                var cost=`
+                    <div>
+                        총액:<span class="price">2</span>
+                    </div>
+`
+        $('tbody').append(cost);
+        
+                var tLength = $('tbody').children('tr').length;
+            
+            function valEvent(){
+                var num = 0;
+                for(i=0;i<tLength;i++){
+                    var qtt = $('.qtt')[i].innerHTML;
+                    var prc = $('.prc')[i].innerHTML;
+                   num = num + parseInt(qtt)*parseInt(prc);
+                }
+                $('.price').text(num);
+                $('.cart').text("어렵다");
+            }
+        valEvent();
+    </script>
+
+
+
+
+
+    <br><br>숙제2. 표의 행마다 '상품삭제' 버튼을 만들어봅시다.
+    <br> - 삭제를 누르면 해당하는 tr 태그 전체가 삭제되어야합니다.
+    <br> - 그리고 거기에 맞는 localStorage에 저장된 productX가 삭제되어야합니다.
+    <br>(힌트) 원래 tr같은 html태그 내부에 data-id="product1" 같은 임시데이터를 몰래 심어두는게 이런거 하실 때 좋습니다.
+
+
+
+
+
+
+
+    <br><br>숙제3. 갑자기 콘솔창에 구구단을 9단까지 출력하고 싶어졌습니다. 콘솔창에 차례로
+
+    2
+    4
+    6
+    8
+    ...
+    18
+    3
+    6
+    9
+    ...
+    27
+
+    이렇게 총 9단까지의 결과값을 출력하고싶은데 어떻게 코드를 짜야 할까요?
+
+    <br>(힌트1)반복문을 쓰시면 됩니다.
+    <br>(힌트2)일단 하나만 구현해보면 쉬워집니다. 일단 2단만 출력해보세요.
+
+
+
+
+
+
+
+
+
+    <br><br>숙제4. 이번엔 생기부를 만들려고 '학생'이라는 데이터셋을 하단에 만들어놨는데, 데이터가 약간 복잡하게 생겼습니다. 여기 저장된 학생들의 '이름'과 '특기'를 콘솔창에 다음과 같이 하나씩 출력하려고합니다. 어떻게 해야할까요?
+
+    <script>
+        var 학생 = [{
+                이름: "김한화",
+                특기: "순대자르기"
+            },
+            {
+                이름: "박삼성",
+                특기: "자바스크립트"
+            },
+            {
+                이름: "최용진",
+                특기: "눕기"
+            }
+        ];
+    </script>
+
+
+    <br>(콘솔창 출력 결과)
+    이름 = 김한화
+    특기 = 순대자르기
+    이름 = 박삼성
+    특기 = 자바스크립트
+    이름 = 최용진
+    특기 = 눕기
+
+    <br>- 조건1. 위 문제랑 비슷합니다. 데이터가 array이면 for 또는 forEach, object이면 for in 문법을 사용합니다.
+
+
+
+
+
+
+
+    <br><br>숙제5. 수업시간에 메인페이지 '상품 더보기' 버튼을 누르면 상품 4,5,6번이 뿅하고 나오는것 까지 코드 짜보셨죠? 이번엔 더보기 버튼을 두번째로 누르면 상품 7,8,9번이 나오도록 만들어보십시오.
+    <br>- 조건1. 상품 7,8,9의 정보는 more2.json 파일에 준비해놨습니다.
+    <br> (힌트) 똑같이 ajax요청을 하시면 됩니다. 그런데 버튼을 두번째 누를 땐 more2.json경로에 있는 상품 7,8,9번을 가져와야합니다.
+
+
+
+
+
+
+
+
+    <br><br>숙제6. 마지막 7,8,9번 상품까지 가져온 후에는 더 이상 상품이 없기 때문에 '더보기'버튼이 동작하면 안되겠죠? 7,8,9번 상품까지 가져왔다면 더보기 버튼을 더 이상 누를 수 없게 처리해보도록 합시다. 방법은 여러가지 입니다.
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body></html>
