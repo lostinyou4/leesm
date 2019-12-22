@@ -33,32 +33,32 @@
 
 
 	<script>
-		
+
 		document.querySelector('#modal').addEventListener('click',function(e){
-			
-			
-			e.target;   //실제 누른거 
+
+
+			e.target;   //실제 누른거
 			e.currentTarget;   //이벤트가 달린곳(동작하는곳), 일명 this
-			this;  
-			e.preventDefault();  //기본동작막기 
-			e.stopPropagation();  //이벤트 버블링 중단 
-			
-			
-		  //지금 진짜 누른게 검은배경일 때만 닫아라  
-			
+			this;
+			e.preventDefault();  //기본동작막기
+			e.stopPropagation();  //이벤트 버블링 중단
+
+
+		  //지금 진짜 누른게 검은배경일 때만 닫아라
+
 			console.log(e.target);
-			
+
 			if ( e.target == document.querySelector('.black-background') ){
 				document.getElementById('modal').style.display = 'none';
 			}
-			
+
 		});
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 		function 이쁜함수() {
 
 			if (document.getElementById("email").value == "") {
@@ -100,36 +100,36 @@
 			</ul>
 		</div>
 	</nav>
-	
-	
+
+
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	
+
 	<script>
-		
-//	사용자가 스크롤바를 조작하면 항상 밑에 코드를 실행시켜야함 	
-	
+
+//	사용자가 스크롤바를 조작하면 항상 밑에 코드를 실행시켜야함
+
 	$(window).on('scroll',function(){
 //	console.log($(window).scrollTop());
-//		스크롤바를 100px 내리면... 
-//		로고의 폰트사이즈가 줄어들어야함. 
+//		스크롤바를 100px 내리면...
+//		로고의 폰트사이즈가 줄어들어야함.
 //		만약에 스크롤바를 내린게 100px 이하면
-//		로고폰트사이즈가 커짐 
-	
+//		로고폰트사이즈가 커짐
+
 		if ( $(window).scrollTop() > 100 ) {
 			$('.navbar-brand').addClass('small-font');
 		} else {
 			$('.navbar-brand').removeClass('small-font');
 		}
-		
-//		1. 클래스 떼었다가 붙였다가 하는게 정석 
-//		2. animate 함수는 낡은 기술 transition을 쓰셈 
-//		3. margin, padding 이런거 transiton 주지 마셈 
-//		
+
+//		1. 클래스 떼었다가 붙였다가 하는게 정석
+//		2. animate 함수는 낡은 기술 transition을 쓰셈
+//		3. margin, padding 이런거 transiton 주지 마셈
+//
 	});
-	
+
 	</script>
-	
-	
+
+
 
 
 	<div class="jumbotron main-background">
@@ -149,7 +149,7 @@
 		}
 
 		function 가입창띄워라(a) {
-			//1. 모달창 열기 
+			//1. 모달창 열기
 			document.getElementById('modal').style.display = 'block';
 			//2. 제목을 '가입하세요'라고 바꾸기
 			document.getElementById('title').innerHTML = a;
@@ -161,7 +161,7 @@
 			1 + a;
 		}
 
-		//3. 퉤 
+		//3. 퉤
 		function 더하기(a) {
 			return 1 + a
 		}
@@ -175,10 +175,10 @@
 
 		//
 		//		var 오늘점심값 = 4000;
-		//		
+		//
 		//		function 법카결제(){
 		//			//return '승인'
-		//			
+		//
 		//			//음 오늘점심값이 6000이하일 경우
 		//			if (오늘점심값 < 6000) {
 		//				return '승인'
@@ -186,7 +186,7 @@
 		//				return '거절'
 		//			}
 		//		}
-		//		
+		//
 
 
 
@@ -194,11 +194,11 @@
 
 
 		//		if ( 3 == 3 && 2 == 2 ){
-		//			조건식이 참일 경우 실행할 코드  
+		//			조건식이 참일 경우 실행할 코드
 		//		} else {
-		//			참이 아닐 경우 
+		//			참이 아닐 경우
 		//		}
-		//		
+		//
 		//
 	</script>
 
@@ -237,21 +237,21 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="container">
 		<button class="btn btn-danger" id="more">더보기</button>
 	</div>
-	
+
 	<script>
-		
+
 		$('#more').on('click',function(){
-			
+
 			$.ajax({
 			type : 'GET',
-			url : '/more.json'
+			url : 'https://lostinyou4.github.io/leesm/study/apple/week4/more.json'
 			}).done(function(a){
 				console.log(a); //	[{} {} {} {}]
-				
+
 				for (var i = 0; i < 3; i++){
 					var 템플릿 = `
 						<div class="col-md-4">
@@ -266,27 +266,27 @@
 					$('div.row').append(템플릿);
 				}
 			});
-		
-			//3. HTML 카드 템플릿을 만들고 
-			//4. 내가 원하는 위치에 HTML 템플릿을 꽂아넣기 
+
+			//3. HTML 카드 템플릿을 만들고
+			//4. 내가 원하는 위치에 HTML 템플릿을 꽂아넣기
 		});
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
 //	ajax - GET/POST 요청
-//	
-//	서버 : 요청을하면 뭔가를 주는(html,css,js,img) 기계 
-//	
-//	GET 요청 : URL로 뭔가 요청함, 읽기 
-//	POST 요청 : 숨겨서 뭔가 요청하는건데, 쓰기 
+//
+//	서버 : 요청을하면 뭔가를 주는(html,css,js,img) 기계
+//
+//	GET 요청 : URL로 뭔가 요청함, 읽기
+//	POST 요청 : 숨겨서 뭔가 요청하는건데, 쓰기
 	</script>
-	
-	
+
+
 
 	<h4 id="car">차3에 저장된 car1의 차브랜드명</h4>
 	<h4>차 모델명</h4>
@@ -298,7 +298,7 @@
 		}
 		document.getElementById('car').innerHTML = 차3.car1[0];
 
-  
+
 		var products = [{
 				id: 1,
 				price: 299,
@@ -321,50 +321,50 @@
 				text: "The best beer comes from the monastery."
 			}
 		];
-		
+
 		//  [ {}, {}, {} ]
-		
+
 		products.sort(function(a,b){
 			return a.price - b.price
 		});
-		
-		
+
+
 		document.getElementById('title1').innerHTML = products[0].title;
-		
+
 //		document.getElementsByClassName('card-text')[1].innerHTML = ??;
 //		document.querySelector('.card-text');
 //		document.querySelectorAll('.card-text')[0].innerHTML = ??;
 //		document.querySelectorAll('.card-text')[1].innerHTML = ??;
-		
-		
+
+
 		var 어레이 = [5, 2, 10, 3, 4];
 		어레이.sort(function(a,b){
 			return b - a
 		});
-		
+
 		var 필터한어레이 = 어레이.filter(function(a){
 			return a < 4
 		});
-		
+
 		var 매핑한어레이 = 어레이.map(function(a){
 			return a * 1170
 		})
-		
+
 		어레이.pop();
-		
-		
+
+
 //		오브젝트.brand;
 //		오브젝트['brand'];
-		
-		
-		
-		
 
 
-		var 차 = ['BMW', 520, 'white']; //Array 
+
+
+
+
+		var 차 = ['BMW', 520, 'white']; //Array
 		차[0];
 
-		var 차2 = { //Object 자료형 : 이름붙임 
+		var 차2 = { //Object 자료형 : 이름붙임
 			brand: 'BMW',
 			model: 520
 		}

@@ -37,7 +37,7 @@
     <script>
         document.querySelector('#modal').addEventListener('click', function(e) {
 
-            //지금 진짜 누른게 검은배경일 때만 닫아라  
+            //지금 진짜 누른게 검은배경일 때만 닫아라
 
 
             if (e.target == document.querySelector('.black-background')) {
@@ -126,7 +126,7 @@
         }
 
         function 가입창띄워라(a) {
-            //1. 모달창 열기 
+            //1. 모달창 열기
             document.getElementById('modal').style.display = 'block';
             //2. 제목을 '가입하세요'라고 바꾸기
             document.getElementById('title').innerHTML = a;
@@ -209,29 +209,61 @@
 
         document.getElementById('title1').innerHTML = products[0].title;
 
+        var clickNum = 0;
         $('#more').on('click', function() {
-            $.ajax({
-                type: 'GET',
-                url: '/more.json'
-            }).done(function(a) {
-                console.log(a);
+            if(clickNum == 0){
+              $.ajax({
+                  type: 'GET',
+                  url: 'https://lostinyou4.github.io/leesm/study/apple/week4/more.json'
+              }).done(function(a) {
+                  console.log(a);
 
-                for (var i = 0; i < 3; i++) {
-                    var template = `
-            <div class="col-md-4">
-                <div class="card">
-                    <img src=${a[i].img} class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">${a[i].title}</h5>
-                        <p class="card-text">${a[i].text}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-`;
-                    $('div.row').append(template);
-                }
-            });
+                  for (var i = 0; i < 3; i++) {
+                      var template = `
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src=${a[i].img} class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">${a[i].title}</h5>
+                                    <p class="card-text">${a[i].text}</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                `;
+                      $('div.row').append(template);
+
+                  }
+                  clickNum++;
+                  console.log(clickNum);
+              });
+            }else if(clickNum == 1){
+              $.ajax({
+                  type: 'GET',
+                  url: 'https://lostinyou4.github.io/leesm/study/apple/week4/more2.json'
+              }).done(function(a) {
+                  console.log(a);
+
+                  for (var i = 0; i < 3; i++) {
+                      var template = `
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src=${a[i].img} class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">${a[i].title}</h5>
+                                    <p class="card-text">${a[i].text}</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                `;
+                      $('div.row').append(template);
+
+                  }
+                  clickNum++;
+                  document.getElementById('more').disabled = true;
+              });
+            }
         })
     </script>
 

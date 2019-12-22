@@ -1,0 +1,43 @@
+<!doctype html5>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+
+</style>
+<body>
+<div id="app">
+  <button type="button" v-on:click="add">더하기</button>
+  <!-- v-on: 을 @로 줄여쓸 수 있음 -->
+  {{ counter }}
+
+  <input type="text" @keyup.enter="keyUp">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        counter: 0
+      };
+    },
+    methods:{
+      add() {
+        //메소드함수는 화살표를 사용할 수 없다.
+          this.counter++;
+      },
+      keyUp(ev){
+        if(ev.keyCode !==13){
+          console.log('엔터키아님');
+          return;
+        }
+        console.log('엔터키눌림');
+      }
+    }
+  })
+</script>
+</body>
+</html>

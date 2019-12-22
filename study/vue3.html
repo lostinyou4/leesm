@@ -1,0 +1,68 @@
+<!doctype html5>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+  .dropdown ul{
+    display: none;
+    list-style: none;
+    margin: 0;
+    border: 1px solid black;
+    padding: 10px;
+    width: 200px;
+  }
+
+  .dropdown.on ul{
+    display: block;
+  }
+</style>
+<body>
+<div id="app">
+  <ul style="list-style:none">
+    <!-- <img :id="'thumbnail_${id}'" :src="image"> -->
+    <!-- <div v-bind:style="[style, fontStyle]">
+      테스트용 DIV
+    </div> -->
+    <button type="button" @click="btnClick">버튼</button>
+
+    <div :class="[dropdown, toggle]">
+      <ul>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+      </ul>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        id: 1,
+        image: 'https://picsum.photos/210/118/?image-1',
+        style: {
+          background: 'red',
+        },
+        fontStyle: {
+          fontSize: '10px',
+          fontFamily: 'dotum'
+        },
+        dropdown: 'dropdown',
+        toggle: {
+          on: false
+          //app.toggle.on = true로 on 클래스 추가
+        }
+      };
+    },
+    methods: {
+      btnClick() {
+        this.toggle.on = ! this.toggle.on;
+        console.log(this);
+      }
+    }
+  })
+</script>
+</body>
+</html>
